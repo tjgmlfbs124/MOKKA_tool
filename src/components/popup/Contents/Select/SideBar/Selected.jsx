@@ -89,6 +89,24 @@ class Selected extends Component {
                     );
                 },
             },
+            story: {
+                wrapClass: this.theme.cont_sel_box,
+                imageClass: this.theme.thmb,
+                imageContent: (item, baseUrl) => {
+                    let { filename, fileurl, pictures = [] } = item;
+                    let thumb;
+                    if (pictures.length > 0) {
+                        filename = pictures[0].filename;
+                        fileurl = pictures[0].fileurl;
+                    }
+                    if (fileurl) {
+                        thumb = fileurl.thumb || fileurl.resized || fileurl.origin || fileurl;
+                    }
+                    return (
+                        <img src={thumb || CommonUtils.createImageUrl(filename, baseUrl)} alt=""/>
+                    );
+                },
+            }
         };
     }
 

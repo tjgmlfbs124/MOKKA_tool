@@ -232,6 +232,35 @@ export const DEFAULT_OPTIONS = {
             },
             sidebar: SPRITE_SIDEBAR,
         },
+        story: {
+            title: 'Workspace.story_load',
+            mainType: 'story', //sprite
+            navigations: {
+                select: {
+                    name: 'Workspace.select_library',
+                }/*,
+                upload: {
+                    name: 'Workspace.upload',
+                },
+                draw: {
+                    name: 'Workspace.draw_new',
+                },
+                write: {
+                    name: 'Workspace.textbox',
+                },*/
+            },
+            opt: {
+                search: { query: true },
+                multiSelect: true,
+                uploadAllowed: {
+                    image: true,
+                    object: true,
+                    sound: false,
+                },
+                uploadNotAllowedExt: ['gif'],
+            },
+            sidebar: SPRITE_SIDEBAR,
+        },
         picture: {
             title: 'Workspace.picture_add',
             mainType: 'sprite',
