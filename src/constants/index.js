@@ -13,6 +13,11 @@ export const EMIT_TYPES = {
     draw: 'draw',
     makeProject: 'makeproject',
     select: 'select',
+    select_All: 'select_all',
+    select_beginning: 'select_beginning',
+    select_Intermediate: 'select_intermediate',
+    select_Advance: 'select_advance',
+    select_Sequential: 'select_sequential',
 };
 
 const SPRITE_SIDEBAR = {
@@ -114,6 +119,41 @@ const SPRITE_SIDEBAR = {
             background_nature: { name: 'Category.background_nature' },
             background_others: { name: 'Category.background_others' },
         },
+    },
+};
+
+const STORY_SIDEBAR = {
+    STORY_01: {
+        name: 'Category.STORY_01',
+        sub: {},
+    },
+    STORY_02: {
+        name: 'Category.STORY_02',
+        sub: {},
+    },
+    STORY_03: {
+        name: 'Category.STORY_03',
+        sub: {},
+    },
+    STORY_04: {
+        name: 'Category.STORY_04',
+        sub: {},
+    },
+    STORY_05: {
+        name: 'Category.STORY_05',
+        sub: {},
+    },
+    STORY_06: {
+        name: 'Category.STORY_06',
+        sub: {},
+    },
+    STORY_07: {
+        name: 'Category.STORY_07',
+        sub: {},
+    },
+    STORY_08: {
+        name: 'Category.STORY_08',
+        sub: {},
     },
 };
 
@@ -232,26 +272,32 @@ export const DEFAULT_OPTIONS = {
             },
             sidebar: SPRITE_SIDEBAR,
         },
-        story: {
+        story: { // @ckw
             title: 'Workspace.story_load',
             mainType: 'story', //sprite
             navigations: {
                 select: {
                     name: 'Workspace.select_library',
-                }/*,
-                upload: {
-                    name: 'Workspace.upload',
                 },
-                draw: {
-                    name: 'Workspace.draw_new',
+                select_All: {
+                    name: 'Workspace.select_all',
                 },
-                write: {
-                    name: 'Workspace.textbox',
-                },*/
+                select_beginning: {
+                    name :'Workspace.select_beginning',
+                },
+                select_Intermediate: {
+                    name: 'Workspace.select_intermediate',
+                },
+                select_Advance: {
+                    name: 'Workspace.select_advance',
+                },
+                select_Sequential: {
+                    name: 'Workspace.select_sequential',
+                }
             },
             opt: {
-                search: { query: true },
-                multiSelect: true,
+                search: { query: false },
+                multiSelect: false,
                 uploadAllowed: {
                     image: true,
                     object: true,
@@ -259,7 +305,7 @@ export const DEFAULT_OPTIONS = {
                 },
                 uploadNotAllowedExt: ['gif'],
             },
-            sidebar: SPRITE_SIDEBAR,
+            sidebar: STORY_SIDEBAR,
         },
         picture: {
             title: 'Workspace.picture_add',

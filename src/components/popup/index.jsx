@@ -139,6 +139,96 @@ class Sprite extends Component {
                     />
                 ),
             },
+            select_All: {
+                view: (
+                    <Select
+                        type={this.props.type}
+                        mainType={this.options.mainType}
+                        sidebar={this.options.sidebar}
+                        data={this.props.data || []}
+                        multiSelect={this.options.opt && this.options.opt.multiSelect}
+                    />
+                ),
+                nav: (
+                    <Navigation
+                        {...navSettings}
+                        searchOption={this.options.opt && this.options.opt.search}
+                        hidden={{ type: this.props.type }}
+                    />
+                ),
+            },
+            select_beginning: {
+                view: (
+                    <Select
+                        type={this.props.type}
+                        mainType={this.options.mainType}
+                        sidebar={this.options.sidebar}
+                        data={this.props.data || []}
+                        multiSelect={this.options.opt && this.options.opt.multiSelect}
+                    />
+                ),
+                nav: (
+                    <Navigation
+                        {...navSettings}
+                        searchOption={this.options.opt && this.options.opt.search}
+                        hidden={{ type: this.props.type }}
+                    />
+                ),
+            },
+            select_Intermediate: {
+                view: (
+                    <Select
+                        type={this.props.type}
+                        mainType={this.options.mainType}
+                        sidebar={this.options.sidebar}
+                        data={this.props.data || []}
+                        multiSelect={this.options.opt && this.options.opt.multiSelect}
+                    />
+                ),
+                nav: (
+                    <Navigation
+                        {...navSettings}
+                        searchOption={this.options.opt && this.options.opt.search}
+                        hidden={{ type: this.props.type }}
+                    />
+                ),
+            },
+            select_Advance: {
+                view: (
+                    <Select
+                        type={this.props.type}
+                        mainType={this.options.mainType}
+                        sidebar={this.options.sidebar}
+                        data={this.props.data || []}
+                        multiSelect={this.options.opt && this.options.opt.multiSelect}
+                    />
+                ),
+                nav: (
+                    <Navigation
+                        {...navSettings}
+                        searchOption={this.options.opt && this.options.opt.search}
+                        hidden={{ type: this.props.type }}
+                    />
+                ),
+            },
+            select_Sequential: {
+                view: (
+                    <Select
+                        type={this.props.type}
+                        mainType={this.options.mainType}
+                        sidebar={this.options.sidebar}
+                        data={this.props.data || []}
+                        multiSelect={this.options.opt && this.options.opt.multiSelect}
+                    />
+                ),
+                nav: (
+                    <Navigation
+                        {...navSettings}
+                        searchOption={this.options.opt && this.options.opt.search}
+                        hidden={{ type: this.props.type }}
+                    />
+                ),
+            }
         };
 
         return (
