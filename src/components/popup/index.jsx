@@ -5,6 +5,7 @@ import { visibleAction } from '@actions/index';
 
 import Navigation from './Navigation';
 import Select from './Contents/Select';
+import Story from './Contents/Story';
 import FileUpload from './Contents/FileUpload';
 import WriteBox from './Contents/WriteBox';
 import Draw from './Contents/Draw';
@@ -139,9 +140,9 @@ class Sprite extends Component {
                     />
                 ),
             },
-            select_All: {
+            story_load: {
                 view: (
-                    <Select
+                    <Story
                         type={this.props.type}
                         mainType={this.options.mainType}
                         sidebar={this.options.sidebar}
@@ -157,78 +158,6 @@ class Sprite extends Component {
                     />
                 ),
             },
-            select_beginning: {
-                view: (
-                    <Select
-                        type={this.props.type}
-                        mainType={this.options.mainType}
-                        sidebar={this.options.sidebar}
-                        data={this.props.data || []}
-                        multiSelect={this.options.opt && this.options.opt.multiSelect}
-                    />
-                ),
-                nav: (
-                    <Navigation
-                        {...navSettings}
-                        searchOption={this.options.opt && this.options.opt.search}
-                        hidden={{ type: this.props.type }}
-                    />
-                ),
-            },
-            select_Intermediate: {
-                view: (
-                    <Select
-                        type={this.props.type}
-                        mainType={this.options.mainType}
-                        sidebar={this.options.sidebar}
-                        data={this.props.data || []}
-                        multiSelect={this.options.opt && this.options.opt.multiSelect}
-                    />
-                ),
-                nav: (
-                    <Navigation
-                        {...navSettings}
-                        searchOption={this.options.opt && this.options.opt.search}
-                        hidden={{ type: this.props.type }}
-                    />
-                ),
-            },
-            select_Advance: {
-                view: (
-                    <Select
-                        type={this.props.type}
-                        mainType={this.options.mainType}
-                        sidebar={this.options.sidebar}
-                        data={this.props.data || []}
-                        multiSelect={this.options.opt && this.options.opt.multiSelect}
-                    />
-                ),
-                nav: (
-                    <Navigation
-                        {...navSettings}
-                        searchOption={this.options.opt && this.options.opt.search}
-                        hidden={{ type: this.props.type }}
-                    />
-                ),
-            },
-            select_Sequential: {
-                view: (
-                    <Select
-                        type={this.props.type}
-                        mainType={this.options.mainType}
-                        sidebar={this.options.sidebar}
-                        data={this.props.data || []}
-                        multiSelect={this.options.opt && this.options.opt.multiSelect}
-                    />
-                ),
-                nav: (
-                    <Navigation
-                        {...navSettings}
-                        searchOption={this.options.opt && this.options.opt.search}
-                        hidden={{ type: this.props.type }}
-                    />
-                ),
-            }
         };
 
         return (

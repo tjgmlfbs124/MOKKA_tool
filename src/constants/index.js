@@ -13,11 +13,7 @@ export const EMIT_TYPES = {
     draw: 'draw',
     makeProject: 'makeproject',
     select: 'select',
-    select_All: 'select_all',
-    select_beginning: 'select_beginning',
-    select_Intermediate: 'select_intermediate',
-    select_Advance: 'select_advance',
-    select_Sequential: 'select_sequential',
+    story_load: 'story_load',
 };
 
 const SPRITE_SIDEBAR = {
@@ -125,35 +121,83 @@ const SPRITE_SIDEBAR = {
 const STORY_SIDEBAR = {
     STORY_01: {
         name: 'Category.STORY_01',
-        sub: {},
+        sub: {
+            STORY_All: {name: "Category.STORY_ALL"},
+            STORY_01_Beginning: {name: "Category.STORY_Beginning"},
+            STORY_01_Intermediate: {name: "Category.STORY_Intermediate"},
+            STORY_01_Advance: {name: "Category.STORY_Advance"},
+            STORY_01_Sequential: {name: "Category.STORY_Sequential"},
+        },
     },
     STORY_02: {
         name: 'Category.STORY_02',
-        sub: {},
+        sub: {
+            STORY_All: {name: "Category.STORY_ALL"},
+            STORY_02_Beginning: {name: "Category.STORY_Beginning"},
+            STORY_02_Intermediate: {name: "Category.STORY_Intermediate"},
+            STORY_02_Advance: {name: "Category.STORY_Advance"},
+            STORY_02_Sequential: {name: "Category.STORY_Sequential"},
+        },
     },
     STORY_03: {
         name: 'Category.STORY_03',
-        sub: {},
+        sub: {
+            STORY_All: {name: "Category.STORY_ALL"},
+            STORY_03_Beginning: {name: "Category.STORY_Beginning"},
+            STORY_03_Intermediate: {name: "Category.STORY_Intermediate"},
+            STORY_03_Advance: {name: "Category.STORY_Advance"},
+            STORY_03_Sequential: {name: "Category.STORY_Sequential"},
+        },
     },
     STORY_04: {
         name: 'Category.STORY_04',
-        sub: {},
+        sub: {
+            STORY_All: {name: "Category.STORY_ALL"},
+            STORY_04_Beginning: {name: "Category.STORY_Beginning"},
+            STORY_04_Intermediate: {name: "Category.STORY_Intermediate"},
+            STORY_04_Advance: {name: "Category.STORY_Advance"},
+            STORY_04_Sequential: {name: "Category.STORY_Sequential"},
+        },
     },
     STORY_05: {
         name: 'Category.STORY_05',
-        sub: {},
+        sub: {
+            STORY_All: {name: "Category.STORY_ALL"},
+            STORY_05_Beginning: {name: "Category.STORY_Beginning"},
+            STORY_05_Intermediate: {name: "Category.STORY_Intermediate"},
+            STORY_05_Advance: {name: "Category.STORY_Advance"},
+            STORY_05_Sequential: {name: "Category.STORY_Sequential"},
+        },
     },
     STORY_06: {
         name: 'Category.STORY_06',
-        sub: {},
+        sub: {
+            STORY_All: {name: "Category.STORY_ALL"},
+            STORY_06_Beginning: {name: "Category.STORY_Beginning"},
+            STORY_06_Intermediate: {name: "Category.STORY_Intermediate"},
+            STORY_06_Advance: {name: "Category.STORY_Advance"},
+            STORY_06_Sequential: {name: "Category.STORY_Sequential"},
+        },
     },
     STORY_07: {
         name: 'Category.STORY_07',
-        sub: {},
+        sub: {
+            STORY_All: {name: "Category.STORY_ALL"},
+            STORY_07_Beginning: {name: "Category.STORY_Beginning"},
+            STORY_07_Intermediate: {name: "Category.STORY_Intermediate"},
+            STORY_07_Advance: {name: "Category.STORY_Advance"},
+            STORY_07_Sequential: {name: "Category.STORY_Sequential"},
+        },
     },
     STORY_08: {
         name: 'Category.STORY_08',
-        sub: {},
+        sub: {
+            STORY_All: {name: "Category.STORY_ALL"},
+            STORY_08_Beginning: {name: "Category.STORY_Beginning"},
+            STORY_08_Intermediate: {name: "Category.STORY_Intermediate"},
+            STORY_08_Advance: {name: "Category.STORY_Advance"},
+            STORY_08_Sequential: {name: "Category.STORY_Sequential"},
+        },
     },
 };
 
@@ -273,27 +317,12 @@ export const DEFAULT_OPTIONS = {
             sidebar: SPRITE_SIDEBAR,
         },
         story: { // @ckw
-            title: 'Workspace.story_load',
+            title: 'Workspace.tathink',
             mainType: 'story', //sprite
             navigations: {
-                select: {
-                    name: 'Workspace.select_library',
+                story_load: {
+                    name: 'Workspace.story_load',
                 },
-                select_All: {
-                    name: 'Workspace.select_all',
-                },
-                select_beginning: {
-                    name :'Workspace.select_beginning',
-                },
-                select_Intermediate: {
-                    name: 'Workspace.select_intermediate',
-                },
-                select_Advance: {
-                    name: 'Workspace.select_advance',
-                },
-                select_Sequential: {
-                    name: 'Workspace.select_sequential',
-                }
             },
             opt: {
                 search: { query: false },
