@@ -18,7 +18,7 @@ class SideBar extends Component {
             type: this.props.type,
             sidebar: e.currentTarget.getAttribute('data-key'),
             //subMenu: 'all',
-            subMenu: 'STORY_All',
+            subMenu: 'STORY_All'
         });
     }
 

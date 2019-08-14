@@ -24,7 +24,8 @@ class Index extends Component {
         return {
             type: this.props.mainType,
             sidebar: Object.keys(this.props.sidebar)[0],
-            subMenu: 'all',
+            //subMenu: 'all',
+            subMenu: 'STORY_All',
         };
     }
 
