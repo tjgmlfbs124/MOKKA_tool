@@ -111,6 +111,8 @@ class WriteBox extends Component {
         super(props);
         this.theme = Theme.getStyle("popup");
         this.fonts = CommonUtils.getFonts();
+        console.log("### writeBOX!");
+        console.log(this.fonts);
         this.state = {
             writeType: 'one',
             effects: _cloneDeep(this.props.fontOption.EFFECTS),
