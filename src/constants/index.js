@@ -196,7 +196,15 @@ const STORY_SIDEBAR = {
         sub: {
             STORY_All: {name: "Category.STORY_ALL"},
         },
-    }
+    },
+	STORY_09: {
+		name: "Category.STORY_09",
+		sub: {
+			STORY_All: {
+				name: "Category.STORY_ALL"
+			}
+		}
+	}
 };
 
 export const DEFAULT_OPTIONS = {
