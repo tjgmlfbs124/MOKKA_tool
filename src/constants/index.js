@@ -122,86 +122,86 @@ const STORY_SIDEBAR = {
     STORY_01: {
         name: 'Category.STORY_01',
         sub: {
-            STORY_All: {name: "Category.STORY_ALL"},
-            STORY_01_Beginning: {name: "Category.STORY_Beginning"},
-            STORY_01_Intermediate: {name: "Category.STORY_Intermediate"},
-            STORY_01_Advance: {name: "Category.STORY_Advance"},
+            STORY_first: {name: "Category.STORY_first"},
+            STORY_01_Beginning: {name: "Category.STORY_second"},
+            STORY_01_Intermediate: {name: "Category.STORY_third"},
+            STORY_01_Advance: {name: "Category.STORY_fourth"},
         },
     },
     STORY_02: {
         name: 'Category.STORY_02',
         sub: {
-            STORY_All: {name: "Category.STORY_ALL"},
-            STORY_02_Beginning: {name: "Category.STORY_Beginning"},
-            STORY_02_Intermediate: {name: "Category.STORY_Intermediate"},
-            STORY_02_Advance: {name: "Category.STORY_Advance"},
+            STORY_first: {name: "Category.STORY_first"},
+            STORY_02_Beginning: {name: "Category.STORY_second"},
+            STORY_02_Intermediate: {name: "Category.STORY_third"},
+            STORY_02_Advance: {name: "Category.STORY_fourth"},
         },
     },
     STORY_03: {
         name: 'Category.STORY_03',
         sub: {
-            STORY_All: {name: "Category.STORY_ALL"},
-            STORY_03_Beginning: {name: "Category.STORY_Beginning"},
-            STORY_03_Intermediate: {name: "Category.STORY_Intermediate"},
-            STORY_03_Advance: {name: "Category.STORY_Advance"},
+            STORY_first: {name: "Category.STORY_first"},
+            STORY_03_Beginning: {name: "Category.STORY_second"},
+            STORY_03_Intermediate: {name: "Category.STORY_third"},
+            STORY_03_Advance: {name: "Category.STORY_fourth"},
         },
     },
     STORY_04: {
         name: 'Category.STORY_04',
         sub: {
-            STORY_All: {name: "Category.STORY_ALL"},
-            STORY_04_Beginning: {name: "Category.STORY_Beginning"},
-            STORY_04_Intermediate: {name: "Category.STORY_Intermediate"},
-            STORY_04_Advance: {name: "Category.STORY_Advance"},
+            STORY_first: {name: "Category.STORY_first"},
+            STORY_04_Beginning: {name: "Category.STORY_second"},
+            STORY_04_Intermediate: {name: "Category.STORY_third"},
+            STORY_04_Advance: {name: "Category.STORY_fourth"},
         },
     },
     STORY_05: {
         name: 'Category.STORY_05',
         sub: {
-            STORY_All: {name: "Category.STORY_ALL"},
-            STORY_05_Beginning: {name: "Category.STORY_Beginning"},
-            STORY_05_Intermediate: {name: "Category.STORY_Intermediate"},
-            STORY_05_Advance: {name: "Category.STORY_Advance"},
+            STORY_first: {name: "Category.STORY_first"},
+            STORY_05_Beginning: {name: "Category.STORY_second"},
+            STORY_05_Intermediate: {name: "Category.STORY_third"},
+            STORY_05_Advance: {name: "Category.STORY_fourth"},
         },
     },
     STORY_06: {
         name: 'Category.STORY_06',
         sub: {
-            STORY_All: {name: "Category.STORY_ALL"},
-            STORY_06_Beginning: {name: "Category.STORY_Beginning"},
-            STORY_06_Intermediate: {name: "Category.STORY_Intermediate"},
-            STORY_06_Advance: {name: "Category.STORY_Advance"},
+            STORY_first: {name: "Category.STORY_first"},
+            STORY_06_Beginning: {name: "Category.STORY_second"},
+            STORY_06_Intermediate: {name: "Category.STORY_third"},
+            STORY_06_Advance: {name: "Category.STORY_fourth"},
         },
     },
     STORY_07: {
         name: 'Category.STORY_07',
         sub: {
-            STORY_All: {name: "Category.STORY_ALL"},
-            STORY_07_Beginning: {name: "Category.STORY_Beginning"},
-            STORY_07_Intermediate: {name: "Category.STORY_Intermediate"},
-            STORY_07_Advance: {name: "Category.STORY_Advance"},
+            STORY_first: {name: "Category.STORY_first"},
+            STORY_07_Beginning: {name: "Category.STORY_second"},
+            STORY_07_Intermediate: {name: "Category.STORY_third"},
+            STORY_07_Advance: {name: "Category.STORY_fourth"},
         },
     },
     STORY_08: {
         name: 'Category.STORY_08',
         sub: {
-            STORY_All: {name: "Category.STORY_ALL"},
-            STORY_08_Beginning: {name: "Category.STORY_Beginning"},
-            STORY_08_Intermediate: {name: "Category.STORY_Intermediate"},
-            STORY_08_Advance: {name: "Category.STORY_Advance"},
+            STORY_first: {name: "Category.STORY_first"},
+            STORY_08_Beginning: {name: "Category.STORY_second"},
+            STORY_08_Intermediate: {name: "Category.STORY_third"},
+            STORY_08_Advance: {name: "Category.STORY_fourth"},
         },
     },
     STORY_Sequential: {
         name: "Category.STORY_Sequential",
         sub: {
-            STORY_All: {name: "Category.STORY_ALL"},
+            STORY_first: {name: "Category.STORY_first"},
         },
     },
 	STORY_09: {
 		name: "Category.STORY_09",
 		sub: {
-			STORY_All: {
-				name: "Category.STORY_ALL"
+			STORY_first: {
+				name: "Category.STORY_first"
 			}
 		}
 	}
