@@ -22,8 +22,8 @@ import {
     SPRITE_SAMPLE,
     EXPANSION_SAMPLE,
     SOUND_SAMPLE,
+    STORY_SAMPLE
 } from '../constants/sample';
-
 import configureStore from '../store';
 const store = configureStore();
 httpService.setupInterceptors('http://localhost:4000');
@@ -32,17 +32,18 @@ export default function Provider({ story }) {
 }
 Theme.type="entryline";
 storiesOf('Popup', module)
-    .addDecorator((story) => <Provider story={story()} />)
-    .add('전체', () => <Sample />)
-    .add('툴팁', () => <Tooltips />)
-    .add('확장블록', () => <Popup type="expansion" data={EXPANSION_SAMPLE} />)
-    .add('소리', () => <Popup type="sound" data={SOUND_SAMPLE} />)
-    .add('오브젝트추가하기', () => <Popup type="sprite" data={SPRITE_SAMPLE} />)
-    .add('모양추가', () => <Popup type="picture" data={SPRITE_SAMPLE} />)
-    .add('모양 가져오기', () => <Popup type="paint" data={SPRITE_SAMPLE} />)
-    .add('나의 작품', () => <Popup type="projects" data={PROJECTS_SAMPLE} />)
-    .add('gnb', () => <CommonGnb />);
-
+  .addDecorator((story) => <Provider story={story()} />)
+  .add('전체', () => <Sample />)
+  .add('툴팁', () => <Tooltips />)
+  .add('확장블록', () => <Popup type="expansion" data={EXPANSION_SAMPLE} />)
+  .add('소리', () => <Popup type="sound" data={SOUND_SAMPLE} />)
+  .add('오브젝트추가하기', () => <Popup type="sprite" data={SPRITE_SAMPLE} />)
+  .add('모양추가', () => <Popup type="picture" data={SPRITE_SAMPLE} />)
+  .add('모양 가져오기', () => <Popup type="paint" data={SPRITE_SAMPLE} />)
+  .add('나의 작품', () => <Popup type="projects" data={PROJECTS_SAMPLE} />)
+  .add('gnb', () => <CommonGnb />)
+  .add('스토리모드',() => <Popup type ="story" data={STORY_SAMPLE}/>);
+console.log("module : " , module);
 const progressType = {
     progress: 'Progress',
     error: 'Error',

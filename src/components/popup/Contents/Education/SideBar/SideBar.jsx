@@ -17,12 +17,12 @@ class SideBar extends Component {
         this.props.setUIParam({
             type: this.props.type,
             sidebar: e.currentTarget.getAttribute('data-key'),
-            subMenu: e.currentTarget.getAttribute('data-key') + '_first'
+            subMenu: e.currentTarget.getAttribute('data-key') + "_MISSION"
         });
     }
 
     drawSideBar() {
-        const list = this.props.sidebar;
+        const list = this.props.educationBar;
         const sidebar = this.props.popupReducer.sidebar;
         if (!list) {
             return '';
@@ -45,7 +45,6 @@ class SideBar extends Component {
     }
 
     render() {
-
         return <ul className={this.theme.menu_list}>{this.drawSideBar()}</ul>;
     }
 }
