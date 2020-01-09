@@ -1569,3 +1569,36 @@ export const EXPANSION_SAMPLE = {
         },
     ]
 };
+
+// 스토리 샘플
+export const STORY_SAMPLE = {
+    data : [
+		{
+			"_id": "0000소리측정_게임",
+			"filename":"0000소리측정_게임",
+			"name": "소리측정기 만들기 [게임]",
+			"user": "53eef21dce8dd2c54f0cb721",
+			"__v": 0,
+			"origin": {
+				"height": 540,
+				"width": 960,
+				"filename": "0000소리측정_게임"
+			},
+			"created": "2016-11-22T08:08:36.255Z",
+			"specials": [],
+			"type": "_system_",
+			"dimension": {
+				"width": 960,
+				"height": 540
+			},
+			"category": {
+				"sub": "STORY_09_first",
+				"main": "STORY_09"
+			},
+			"label": {
+				"ko": "소리측정기 만들기 [게임]",
+				"en": ""
+			}
+		}
+    ]
+};

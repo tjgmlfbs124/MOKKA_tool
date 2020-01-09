@@ -25,7 +25,7 @@ class Index extends Component {
             type: this.props.mainType,
             sidebar: Object.keys(this.props.sidebar)[0],
             //subMenu: 'all',
-            subMenu: 'STORY_01_first',
+            subMenu: Object.keys(this.props.sidebar)[0] + '_MISSION',
         };
     }
 
@@ -47,11 +47,15 @@ class Index extends Component {
     }
 
     componentWillUnmount() {
-        // @SEO STORY->EDUCATION 으로 상위메뉴가 바뀔때 호출됨..
+        // this.props.setUIParam({
+        //     type: undefined,
+        //     sidebar: undefined,
+        //     subMenu: undefined
+        // });
         this.props.setUIParam({
             type: 'story',
-            sidebar: 'EDUCATION_01',
-            subMenu: 'EDUCATION_01_MISSION'
+            sidebar: 'STORY_01',
+            subMenu: 'STORY_01_first'
         });
     }
 
@@ -66,10 +70,10 @@ class Index extends Component {
             return null;
         }
         const subTitle = this.props.popupReducer.sidebar;
-        if (subTitle && this.props.sidebar[subTitle]) {
-            return this.props.sidebar[subTitle].sub;
+        if (subTitle && this.props.educationBar[subTitle]) {
+            return this.props.educationBar[subTitle].sub;
         }
-        return this.props.sidebar[Object.keys(this.props.sidebar)[0]].sub;
+        return this.props.educationBar[Object.keys(this.props.educationBar)[0]].sub;
     }
 
     drawListBox() {
@@ -81,10 +85,14 @@ class Index extends Component {
     }
 
     render() {
+        // @SEO educationBar : 스토리 창에서 상단메뉴는 각기 다른 SideBar를 가지기 때문에, 하나 더 추가함.
+        // sidebar :  스토리 1~10 카테고리
+        // educationbar : Weeemake, 기타 교육게임 카테고리
+        // Story의 명세는 popup/Contents/index.jsx에서 정해준다.
         return (
             <React.Fragment>
                 <div className={this.theme.pop_content}>
-                    <SideBar type={this.props.mainType} sidebar={this.props.sidebar}/>
+                    <SideBar type={this.props.mainType} sidebar={this.props.sidebar} educationBar={this.props.educationBar}/>
                     <div className={this.theme.section_cont}>
                         <SubMenu type={this.props.mainType} menus={this.getMenus()}/>
                         {this.drawListBox()}

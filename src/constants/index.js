@@ -122,89 +122,99 @@ const STORY_SIDEBAR = {
     STORY_01: {
         name: 'Category.STORY_01',
         sub: {
-            STORY_All: {name: "Category.STORY_ALL"},
-            STORY_01_Beginning: {name: "Category.STORY_Beginning"},
-            STORY_01_Intermediate: {name: "Category.STORY_Intermediate"},
-            STORY_01_Advance: {name: "Category.STORY_Advance"},
+            STORY_01_first: {name: "Category.STORY_first"},
+            STORY_01_second: {name: "Category.STORY_second"},
+            STORY_01_third: {name: "Category.STORY_third"}
         },
     },
     STORY_02: {
         name: 'Category.STORY_02',
         sub: {
-            STORY_All: {name: "Category.STORY_ALL"},
-            STORY_02_Beginning: {name: "Category.STORY_Beginning"},
-            STORY_02_Intermediate: {name: "Category.STORY_Intermediate"},
-            STORY_02_Advance: {name: "Category.STORY_Advance"},
+            STORY_02_first: {name: "Category.STORY_first"},
+            STORY_02_second: {name: "Category.STORY_second"},
+            STORY_02_third: {name: "Category.STORY_third"},
+            STORY_02_fourth: {name: "Category.STORY_fourth"},
         },
     },
     STORY_03: {
         name: 'Category.STORY_03',
         sub: {
-            STORY_All: {name: "Category.STORY_ALL"},
-            STORY_03_Beginning: {name: "Category.STORY_Beginning"},
-            STORY_03_Intermediate: {name: "Category.STORY_Intermediate"},
-            STORY_03_Advance: {name: "Category.STORY_Advance"},
+            STORY_03_first: {name: "Category.STORY_first"},
+            STORY_03_second: {name: "Category.STORY_second"},
+            STORY_03_third: {name: "Category.STORY_third"},
+            STORY_03_fourth: {name: "Category.STORY_fourth"},
         },
     },
     STORY_04: {
         name: 'Category.STORY_04',
         sub: {
-            STORY_All: {name: "Category.STORY_ALL"},
-            STORY_04_Beginning: {name: "Category.STORY_Beginning"},
-            STORY_04_Intermediate: {name: "Category.STORY_Intermediate"},
-            STORY_04_Advance: {name: "Category.STORY_Advance"},
+            STORY_04_first: {name: "Category.STORY_first"},
+            STORY_04_second: {name: "Category.STORY_second"},
+            STORY_04_third: {name: "Category.STORY_third"},
+            STORY_04_fourth: {name: "Category.STORY_fourth"},
         },
     },
     STORY_05: {
         name: 'Category.STORY_05',
         sub: {
-            STORY_All: {name: "Category.STORY_ALL"},
-            STORY_05_Beginning: {name: "Category.STORY_Beginning"},
-            STORY_05_Intermediate: {name: "Category.STORY_Intermediate"},
-            STORY_05_Advance: {name: "Category.STORY_Advance"},
+            STORY_05_first: {name: "Category.STORY_first"},
+            STORY_05_second: {name: "Category.STORY_second"},
+            STORY_05_third: {name: "Category.STORY_third"},
+            STORY_05_fourth: {name: "Category.STORY_fourth"},
         },
     },
     STORY_06: {
         name: 'Category.STORY_06',
         sub: {
-            STORY_All: {name: "Category.STORY_ALL"},
-            STORY_06_Beginning: {name: "Category.STORY_Beginning"},
-            STORY_06_Intermediate: {name: "Category.STORY_Intermediate"},
-            STORY_06_Advance: {name: "Category.STORY_Advance"},
+            STORY_06_first: {name: "Category.STORY_first"},
+            STORY_06_second: {name: "Category.STORY_second"},
+            STORY_06_third: {name: "Category.STORY_third"},
+            STORY_06_fourth: {name: "Category.STORY_fourth"},
         },
     },
     STORY_07: {
         name: 'Category.STORY_07',
         sub: {
-            STORY_All: {name: "Category.STORY_ALL"},
-            STORY_07_Beginning: {name: "Category.STORY_Beginning"},
-            STORY_07_Intermediate: {name: "Category.STORY_Intermediate"},
-            STORY_07_Advance: {name: "Category.STORY_Advance"},
+            STORY_07_first: {name: "Category.STORY_first"},
+            STORY_07_second: {name: "Category.STORY_second"},
+            STORY_07_third: {name: "Category.STORY_third"},
+            STORY_07_fourth: {name: "Category.STORY_fourth"},
         },
     },
     STORY_08: {
         name: 'Category.STORY_08',
         sub: {
-            STORY_All: {name: "Category.STORY_ALL"},
-            STORY_08_Beginning: {name: "Category.STORY_Beginning"},
-            STORY_08_Intermediate: {name: "Category.STORY_Intermediate"},
-            STORY_08_Advance: {name: "Category.STORY_Advance"},
+            STORY_08_first: {name: "Category.STORY_first"},
+            STORY_08_second: {name: "Category.STORY_second"},
+            STORY_08_third: {name: "Category.STORY_third"},
+            STORY_08_fourth: {name: "Category.STORY_fourth"},
         },
-    },
-    STORY_Sequential: {
-        name: "Category.STORY_Sequential",
+    }
+
+};
+
+const EDUCATION_SIDEBAR = {
+    EDUCATION_01: {
+        name: 'Category.EDUCATION_01',
         sub: {
-            STORY_All: {name: "Category.STORY_ALL"},
+            EDUCATION_01_MISSION: {name: "Category.MISSION"},
+            EDUCATION_01_ANSWER: {name: "Category.ANSWER"},
         },
     },
-	STORY_09: {
-		name: "Category.STORY_09",
-		sub: {
-			STORY_All: {
-				name: "Category.STORY_ALL"
-			}
-		}
-	}
+    EDUCATION_02: {
+        name: 'Category.EDUCATION_02',
+        sub: {
+            EDUCATION_02_MISSION: {name: "Category.MISSION"},
+            EDUCATION_02_ANSWER: {name: "Category.ANSWER"},
+        },
+    },
+    EDUCATION_03: {
+        name: "Category.EDUCATION_03",
+        sub: {
+            EDUCATION_03_MISSION: {name: "Category.MISSION"},
+            EDUCATION_03_ANSWER: {name: "Category.ANSWER"},
+        },
+    }
 };
 
 export const DEFAULT_OPTIONS = {
@@ -329,6 +339,9 @@ export const DEFAULT_OPTIONS = {
                 story_load: {
                     name: 'Workspace.story_load',
                 },
+                education: {
+                    name: 'Workspace.education',
+                }
             },
             opt: {
                 search: { query: false },
@@ -341,6 +354,7 @@ export const DEFAULT_OPTIONS = {
                 uploadNotAllowedExt: ['gif'],
             },
             sidebar: STORY_SIDEBAR,
+            educationBar : EDUCATION_SIDEBAR
         },
         picture: {
             title: 'Workspace.picture_add',

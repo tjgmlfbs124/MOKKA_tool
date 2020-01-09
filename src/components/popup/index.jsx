@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { initState } from '@actions/popup';
 import { visibleAction } from '@actions/index';
-
 import Navigation from './Navigation';
 import Select from './Contents/Select';
 import Story from './Contents/Story';
+import Education from './Contents/Education';
 import FileUpload from './Contents/FileUpload';
 import WriteBox from './Contents/WriteBox';
 import Draw from './Contents/Draw';
@@ -29,7 +29,6 @@ class Sprite extends Component {
         if (this._options && this._options.type === this.props.type) {
             return this._options;
         }
-
         const options = {
             ...DEFAULT_OPTIONS.POPUP_TYPE[this.props.type],
             writeBoxOption: DEFAULT_OPTIONS.WRITE_BOX,
@@ -84,6 +83,7 @@ class Sprite extends Component {
                         type={this.props.type}
                         mainType={this.options.mainType}
                         sidebar={this.options.sidebar}
+                        educationBar={this.options.educationBar}
                         data={this.props.data || []}
                         multiSelect={this.options.opt && this.options.opt.multiSelect}
                     />
@@ -146,6 +146,25 @@ class Sprite extends Component {
                         type={this.props.type}
                         mainType={this.options.mainType}
                         sidebar={this.options.sidebar}
+                        data={this.props.data || []}
+                        multiSelect={this.options.opt && this.options.opt.multiSelect}
+                    />
+                ),
+                nav: (
+                    <Navigation
+                        {...navSettings}
+                        searchOption={this.options.opt && this.options.opt.search}
+                        hidden={{ type: this.props.type }}
+                    />
+                ),
+            },
+            education: {
+                view: (
+                    <Education
+                        type={this.props.type}
+                        mainType={this.options.mainType}
+                        sidebar={this.options.sidebar}
+                        educationBar={this.options.educationBar}
                         data={this.props.data || []}
                         multiSelect={this.options.opt && this.options.opt.multiSelect}
                     />
