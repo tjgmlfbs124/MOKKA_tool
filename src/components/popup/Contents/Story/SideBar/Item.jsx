@@ -18,7 +18,7 @@ class Item extends Component {
         if (this.props.type === 'sound') {
             return <div className={`${this.theme.thmb} ${this.theme.imico_pop_sound_thmb}`}>&nbsp;</div>;
         }
-        let { filename, fileurl, pictures = [] } = this.props.item;
+        let { _id, filename, fileurl, pictures = [] } = this.props.item;
         let thumb;
         if (pictures.length > 0) {
             filename = pictures[0].filename;
@@ -33,7 +33,7 @@ class Item extends Component {
         return (
             <div className={this.theme.thmb}>
                 <img
-                    src={thumb || CommonUtils.createImageUrl(filename, baseUrl)}
+                    src={thumb || CommonUtils.createImageUrl(_id, baseUrl)}
                     alt=""
                 />
             </div>
