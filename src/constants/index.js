@@ -124,7 +124,9 @@ const STORY_SIDEBAR = {
         sub: {
             STORY_01_first: {name: "Category.STORY_first"},
             STORY_01_second: {name: "Category.STORY_second"},
-            STORY_01_third: {name: "Category.STORY_third"}
+            STORY_01_third: {name: "Category.STORY_third"},
+            STORY_01_answer: {name: "Category.STORY_answer"}
+
         },
     },
     STORY_02: {
@@ -133,7 +135,7 @@ const STORY_SIDEBAR = {
             STORY_02_first: {name: "Category.STORY_first"},
             STORY_02_second: {name: "Category.STORY_second"},
             STORY_02_third: {name: "Category.STORY_third"},
-            STORY_02_fourth: {name: "Category.STORY_fourth"},
+            STORY_02_answer: {name: "Category.STORY_answer"}
         },
     },
     STORY_03: {
@@ -142,7 +144,7 @@ const STORY_SIDEBAR = {
             STORY_03_first: {name: "Category.STORY_first"},
             STORY_03_second: {name: "Category.STORY_second"},
             STORY_03_third: {name: "Category.STORY_third"},
-            STORY_03_fourth: {name: "Category.STORY_fourth"},
+            STORY_03_answer: {name: "Category.STORY_answer"}
         },
     },
     STORY_04: {
@@ -151,7 +153,7 @@ const STORY_SIDEBAR = {
             STORY_04_first: {name: "Category.STORY_first"},
             STORY_04_second: {name: "Category.STORY_second"},
             STORY_04_third: {name: "Category.STORY_third"},
-            STORY_04_fourth: {name: "Category.STORY_fourth"},
+            STORY_04_answer: {name: "Category.STORY_answer"}
         },
     },
     STORY_05: {
@@ -160,7 +162,7 @@ const STORY_SIDEBAR = {
             STORY_05_first: {name: "Category.STORY_first"},
             STORY_05_second: {name: "Category.STORY_second"},
             STORY_05_third: {name: "Category.STORY_third"},
-            STORY_05_fourth: {name: "Category.STORY_fourth"},
+            STORY_05_answer: {name: "Category.STORY_answer"}
         },
     },
     STORY_06: {
@@ -169,7 +171,7 @@ const STORY_SIDEBAR = {
             STORY_06_first: {name: "Category.STORY_first"},
             STORY_06_second: {name: "Category.STORY_second"},
             STORY_06_third: {name: "Category.STORY_third"},
-            STORY_06_fourth: {name: "Category.STORY_fourth"},
+            STORY_06_answer: {name: "Category.STORY_answer"}
         },
     },
     STORY_07: {
@@ -178,7 +180,7 @@ const STORY_SIDEBAR = {
             STORY_07_first: {name: "Category.STORY_first"},
             STORY_07_second: {name: "Category.STORY_second"},
             STORY_07_third: {name: "Category.STORY_third"},
-            STORY_07_fourth: {name: "Category.STORY_fourth"},
+            STORY_07_answer: {name: "Category.STORY_answer"}
         },
     },
     STORY_08: {
@@ -187,7 +189,7 @@ const STORY_SIDEBAR = {
             STORY_08_first: {name: "Category.STORY_first"},
             STORY_08_second: {name: "Category.STORY_second"},
             STORY_08_third: {name: "Category.STORY_third"},
-            STORY_08_fourth: {name: "Category.STORY_fourth"},
+            STORY_08_answer: {name: "Category.STORY_answer"}
         },
     }
 
