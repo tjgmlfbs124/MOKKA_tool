@@ -28,7 +28,6 @@ class Item extends Component {
         if (fileurl) {
             thumb = fileurl.thumb || fileurl.resized || fileurl.origin || fileurl;
         }
-
         const baseUrl = this.props.popupReducer.baseUrl;
         return (
             <div className={this.theme.thmb}>
