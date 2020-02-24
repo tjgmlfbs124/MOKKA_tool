@@ -195,6 +195,101 @@ const STORY_SIDEBAR = {
 
 };
 
+const STORY2_SIDEBAR = {
+    STORY2_01: {
+        name: 'Category.STORY2_01',
+        sub: {
+            STORY_01_first: {name: "Category.STORY_first"},
+            STORY_01_second: {name: "Category.STORY_second"},
+            STORY_01_third: {name: "Category.STORY_third"},
+            STORY_01_answer: {name: "Category.STORY_answer"}
+
+        },
+    },
+    STORY2_02: {
+        name: 'Category.STORY2_02',
+        sub: {
+            STORY_02_first: {name: "Category.STORY_first"},
+            STORY_02_second: {name: "Category.STORY_second"},
+            STORY_02_third: {name: "Category.STORY_third"},
+            STORY_02_answer: {name: "Category.STORY_answer"}
+        },
+    },
+    STORY2_03: {
+        name: 'Category.STORY2_03',
+        sub: {
+            STORY_03_first: {name: "Category.STORY_first"},
+            STORY_03_second: {name: "Category.STORY_second"},
+            STORY_03_third: {name: "Category.STORY_third"},
+            STORY_03_answer: {name: "Category.STORY_answer"}
+        },
+    },
+    STORY2_04: {
+        name: 'Category.STORY2_04',
+        sub: {
+            STORY_04_first: {name: "Category.STORY_first"},
+            STORY_04_second: {name: "Category.STORY_second"},
+            STORY_04_third: {name: "Category.STORY_third"},
+            STORY_04_answer: {name: "Category.STORY_answer"}
+        },
+    },
+    STORY2_05: {
+        name: 'Category.STORY2_05',
+        sub: {
+            STORY_05_first: {name: "Category.STORY_first"},
+            STORY_05_second: {name: "Category.STORY_second"},
+            STORY_05_third: {name: "Category.STORY_third"},
+            STORY_05_answer: {name: "Category.STORY_answer"}
+        },
+    },
+    STORY2_06: {
+        name: 'Category.STORY2_06',
+        sub: {
+            STORY_06_first: {name: "Category.STORY_first"},
+            STORY_06_second: {name: "Category.STORY_second"},
+            STORY_06_third: {name: "Category.STORY_third"},
+            STORY_06_answer: {name: "Category.STORY_answer"}
+        },
+    },
+    STORY2_07: {
+        name: 'Category.STORY2_07',
+        sub: {
+            STORY_07_first: {name: "Category.STORY_first"},
+            STORY_07_second: {name: "Category.STORY_second"},
+            STORY_07_third: {name: "Category.STORY_third"},
+            STORY_07_answer: {name: "Category.STORY_answer"}
+        },
+    },
+    STORY2_08: {
+        name: 'Category.STORY2_08',
+        sub: {
+            STORY_08_first: {name: "Category.STORY_first"},
+            STORY_08_second: {name: "Category.STORY_second"},
+            STORY_08_third: {name: "Category.STORY_third"},
+            STORY_08_answer: {name: "Category.STORY_answer"}
+        },
+    },
+    STORY2_09: {
+        name: 'Category.STORY2_09',
+        sub: {
+            STORY_08_first: {name: "Category.STORY_first"},
+            STORY_08_second: {name: "Category.STORY_second"},
+            STORY_08_third: {name: "Category.STORY_third"},
+            STORY_08_answer: {name: "Category.STORY_answer"}
+        },
+    },
+    STORY2_10: {
+        name: 'Category.STORY2_10',
+        sub: {
+            STORY_08_first: {name: "Category.STORY_first"},
+            STORY_08_second: {name: "Category.STORY_second"},
+            STORY_08_third: {name: "Category.STORY_third"},
+            STORY_08_answer: {name: "Category.STORY_answer"}
+        },
+    }
+
+};
+
 const EDUCATION_SIDEBAR = {
     EDUCATION_01: {
         name: 'Category.EDUCATION_01',
@@ -341,6 +436,9 @@ export const DEFAULT_OPTIONS = {
                 story_load: {
                     name: 'Workspace.story_load',
                 },
+                story2_load: {
+                    name: 'Workspace.story2_load',
+                },
                 education: {
                     name: 'Workspace.education',
                 }
@@ -356,7 +454,8 @@ export const DEFAULT_OPTIONS = {
                 uploadNotAllowedExt: ['gif'],
             },
             sidebar: STORY_SIDEBAR,
-            educationBar : EDUCATION_SIDEBAR
+            educationBar : EDUCATION_SIDEBAR,
+            story2_sidebar: STORY2_SIDEBAR,
         },
         picture: {
             title: 'Workspace.picture_add',

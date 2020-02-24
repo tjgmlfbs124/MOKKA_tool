@@ -5,6 +5,7 @@ import { visibleAction } from '@actions/index';
 import Navigation from './Navigation';
 import Select from './Contents/Select';
 import Story from './Contents/Story';
+import Story2 from './Contents/Story2';
 import Education from './Contents/Education';
 import FileUpload from './Contents/FileUpload';
 import WriteBox from './Contents/WriteBox';
@@ -84,6 +85,7 @@ class Sprite extends Component {
                         mainType={this.options.mainType}
                         sidebar={this.options.sidebar}
                         educationBar={this.options.educationBar}
+                        sidebar2={this.options.story2_side}
                         data={this.props.data || []}
                         multiSelect={this.options.opt && this.options.opt.multiSelect}
                     />
@@ -146,6 +148,26 @@ class Sprite extends Component {
                         type={this.props.type}
                         mainType={this.options.mainType}
                         sidebar={this.options.sidebar}
+                        data={this.props.data || []}
+                        multiSelect={this.options.opt && this.options.opt.multiSelect}
+                    />
+                ),
+                nav: (
+                    <Navigation
+                        {...navSettings}
+                        searchOption={this.options.opt && this.options.opt.search}
+                        hidden={{ type: this.props.type }}
+                    />
+                ),
+            },
+            
+            story2_load: {
+                view: (
+                    <Story2
+                        type={this.props.type}
+                        mainType={this.options.mainType}
+                        sidebar={this.options.sidebar}
+                        sidebar2={this.options.story2_sidebar}
                         data={this.props.data || []}
                         multiSelect={this.options.opt && this.options.opt.multiSelect}
                     />
