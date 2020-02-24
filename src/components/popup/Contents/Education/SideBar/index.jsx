@@ -46,17 +46,26 @@ class Index extends Component {
         }
     }
 
-    componentWillUnmount() {
-        // this.props.setUIParam({
-        //     type: undefined,
-        //     sidebar: undefined,
-        //     subMenu: undefined
-        // });
+    // @ckw : 메뉴 선택시 세팅
+    componentDidMount() {
         this.props.setUIParam({
             type: 'story',
-            sidebar: 'STORY_01',
-            subMenu: 'STORY_01_first'
+            sidebar: 'EDUCATION_01',
+            subMenu: 'EDUCATION_01_MISSION'
+        })
+    }
+
+    componentWillUnmount() {
+        this.props.setUIParam({
+            type: undefined,
+            sidebar: undefined,
+            subMenu: undefined
         });
+        // this.props.setUIParam({
+        //     type: 'story',
+        //     sidebar: 'STORY_01',
+        //     subMenu: 'STORY_01_first'
+        // });
     }
 
     drawItems() {

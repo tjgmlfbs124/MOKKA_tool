@@ -46,12 +46,24 @@ class Index extends Component {
         }
     }
 
+    // @ckw : 메뉴 선택시 세팅
+    componentDidMount() {
+        this.props.setUIParam({
+            type: 'story',
+            sidebar: 'STORY_01',
+            subMenu: 'STORY_01_first'
+        })
+    }
+
     componentWillUnmount() {
         // @SEO STORY->EDUCATION 으로 상위메뉴가 바뀔때 호출됨..
         this.props.setUIParam({
-            type: 'story',
-            sidebar: 'EDUCATION_01',
-            subMenu: 'EDUCATION_01_MISSION'
+            // type: 'story',
+            // sidebar: 'EDUCATION_01',
+            // subMenu: 'EDUCATION_01_MISSION'
+            type: undefined,
+            sidebar: undefined,
+            subMenu: undefined,
         });
     }
 

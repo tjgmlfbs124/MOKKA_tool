@@ -85,7 +85,6 @@ class Sprite extends Component {
                         mainType={this.options.mainType}
                         sidebar={this.options.sidebar}
                         educationBar={this.options.educationBar}
-                        sidebar2={this.options.story2_side}
                         data={this.props.data || []}
                         multiSelect={this.options.opt && this.options.opt.multiSelect}
                     />
