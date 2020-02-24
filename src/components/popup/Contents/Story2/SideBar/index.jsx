@@ -25,7 +25,7 @@ class Index extends Component {
             type: this.props.mainType,
             sidebar: Object.keys(this.props.sidebar)[0],
             //subMenu: 'all',
-            subMenu: 'STORY_first',
+            subMenu: 'STORY2_01_first',
         };
     }
 
@@ -51,7 +51,7 @@ class Index extends Component {
         this.props.setUIParam ( {
             type: 'story',
             sidebar: 'STORY2_01',
-            subMenu: 'STORY_01_first'
+            subMenu: 'STORY2_01_first'
         });
     }
 
