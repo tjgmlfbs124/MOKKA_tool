@@ -5,6 +5,7 @@ const INITIAL_STATE = {
     selected: [],
     uploads: [],
     baseUrl: '',
+    ble:[]
 };
 
 export default function popupReducer(state = INITIAL_STATE, action) {

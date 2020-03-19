@@ -50,8 +50,6 @@ class Item extends Component {
 class FileUpload extends Component {
     constructor(props) {
         super(props);
-        console.log("this : " , this);
-        console.log("props : " , props);
         this.theme = Theme.getStyle('popup');
         this.state = {
             isUploading: false,
@@ -216,12 +214,10 @@ class FileUpload extends Component {
     }
 
     getExcludedIndex(item) {
-
         return this.state.excluded.findIndex((element) => element._id === item._id);
     }
 
     onItemClick(item) {
-        console.log("item : " , item.id);
         const index = this.getExcludedIndex(item);
         const excluded = this.state.excluded;
 
@@ -229,24 +225,19 @@ class FileUpload extends Component {
             if (index >= 0) {
                 excluded.splice(index, 1);
                 this.props.triggerEvent('itemon', { id: item._id }, false);
-                console.log("[1] excluded : " , excluded );
             } else {
                 excluded.push(item);
                 this.props.triggerEvent('itemoff', null, false);
-                console.log("[2] excluded : " , excluded);
             }
             this.setState({ excluded });
         } else {
             this.setState({ excluded: [item] });
             this.props.triggerEvent('itemon', { id: item._id }, false);
-            console.log("excluded: [item]  : " , [item] );
         }
     }
 
     drawItems() {
-        console.log("this.props.popupReducer.uploads : " , this.props.popupReducer.uploads);
         return this.props.popupReducer.uploads.map((item) => {
-            console.log("item : " , item);
             let isExcluded = this.getExcludedIndex(item) >= 0;
             if (!this.props.options.multiSelect) {
                 isExcluded = !isExcluded;

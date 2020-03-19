@@ -5,7 +5,6 @@ import { EMIT_TYPES } from '@constants';
 import { CommonUtils } from '@utils/Common';
 import Theme from '@utils/Theme';
 var Noble = require('noble');
-console.log("noBle : " , Noble);
 
 // stateChange 바인딩
 Noble.on('stateChange', function(state){
@@ -55,7 +54,6 @@ class Bluetooth extends Component {
     constructor(props) {
         super(props);
         const _this = this;
-        console.log("props : " , props);
         this.theme = Theme.getStyle("popup");
         this.handleSubmit = this.handleSubmit.bind(this);
         this.webBleScanStart = this.webBleScanStart.bind(this);
@@ -65,24 +63,29 @@ class Bluetooth extends Component {
 
         this.state = {
             isUploading: false,
-            excluded: [],
-            bleList:[],
+            excluded: []
         };
 
         Noble.on('discover', function(peripheral){
-          if(peripheral.advertisement.localName){
-            var item = _this.drawItems(peripheral.uuid, peripheral.advertisement.localName);
-            const excluded = _this.state.excluded;
-
-            _this.state.bleList.push(item);
-            _this.state.bleList.map((list) =>
-              <Item>list</Item>
-            );
-            _this.setState({ excluded });
-            _this.state.bleList.push(this.drawItems());
-            _this.state.bleList.map((list) =>
-              <Item>list</Item>
-            );
+          const localName = peripheral.advertisement.localName;
+          const uuid = peripheral.uuid;
+          if(localName){
+              _this.props.popupReducer.ble.push({
+                dimention : {
+                  height:290,
+                  type:"png",
+                  width:380
+                },
+                extension:".png",
+                filename: localName,
+                fileurl:"./src/uploads/story_img/0000Mr.moo.png",
+                id:uuid,
+                name:localName,
+                type:"user",
+                _id:uuid
+              });
+              const excluded = _this.state.excluded;
+              _this.setState({ excluded });
           }
         })
 
@@ -93,25 +96,19 @@ class Bluetooth extends Component {
     }
 
     onItemClick(item) {
-        console.log("item : " , item);
-        const index = this.getExcludedIndex(item);
-        const excluded = this.state.excluded;
-        const bleList = this.state.bleList;
+      const index = this.getExcludedIndex(item);
+      const excluded = this.state.excluded;
 
-        if (this.props.options.multiSelect) {
-            if (index >= 0) {
-                excluded.splice(index, 1);
-                console.log("[1] excluded : " , excluded );
-            } else {
-                excluded.push(item);
-                console.log("[2] excluded : " , excluded);
-            }
-            this.setState({ excluded, bleList });
-        } else {
-            this.setState({ excluded: [item] });
-            console.log("excluded: [item]  : " , [item] );
-        }
-
+      if (this.props.options.multiSelect) {
+          if (index >= 0) {
+              excluded.splice(index, 1);
+          } else {
+              excluded.push(item);
+          }
+          this.setState({ excluded });
+      } else {
+          this.setState({ excluded: [item] });
+      }
     }
 
     getExcludedIndex(item) {
@@ -120,88 +117,75 @@ class Bluetooth extends Component {
 
     onApplyItemClicked(e) {
         e.preventDefault();
+        const _this = this;
         let selected = [];
-        selected.push({
-          dimension :{
-            height:1,
-            type:"png",
-            width:1
-          },
-          extension : ".png",
-          filename : "fe1qusijk7jz6ai60nfc12c01c378367",
-          fileurl : "./uploads/story_img/00001x1.png",
-          objectType: 'bluetooth', //@SEO type을 정해주고, Entry.playgorund에서 type에 따른 분류를 처리.
-          name:"블루투스",
-          type:"user",
-          _id:"gooz"
-        });
-        // Entry.EntryModalHelper에서 'bluetooth' key 값
+        if (this.props.options.multiSelect) {
+            selected = this.props.popupReducer.ble.filter(
+                (item) => !this.state.excluded.includes(item),
+            );
+        } else {
+            selected = this.state.excluded;
+        }
         this.props.triggerEvent('bluetooth', { uploads: selected }, true);
+        selected.forEach((item, i) => {
+          const _peripherals = Noble._peripherals[item.id] ;
+          if(_peripherals){
+            _peripherals.connect(function (err){
+              if(err) console.log("connect err : " , err);
+              else{
+                _peripherals.discoverSomeServicesAndCharacteristics(['ffe0'], ['ffe1'], _this.onServicesAndCharacteristicsDiscovered);
+              }
+
+            });
+          }
+        });
+
+    }
+
+    onServicesAndCharacteristicsDiscovered(error, services, characteristics) {
+        const _characteristics = characteristics[0];
+
+        _characteristics.on('data', (data, isNotification) => {
+          console.log("Received: " + data);
+        });
+
+        _characteristics.on('write', (err) => {
+          if(err) console.log("write err : " , err)
+        });
     }
 
     getWarnMsg() {
         return '';
     }
 
-
     webBleScanStart(e) {
         e.preventDefault();
-        console.log("startScan@@@@");
+        console.log("[BLE] StartScan");
         Noble.startScanning();
-    }
-
-    drawItems(item, uuid, localName) {
-      console.log("!!!!");
-      var _item = item;
-      console.log("_item : " , _item);
-      var id = Math.random().toString(36).substr(2, 4);
-      if(!_item){
-        _item = {
-            dimension : {
-              height: 283,
-              type:"png",
-              width:425
-            },
-            extension : ".png",
-            filename : "j3a3advak7vg1m1905lo12c01cb28ikz",
-            fileurl : "./src/uploads/story_img/0000Mr.moo.png",
-            id: id,
-            name: id,
-            type:"user",
-            _id: id
-        }
-      }
-      let isExcluded = this.getExcludedIndex(item) >= 0;
-      if (!this.props.options.multiSelect) {
-          isExcluded = !isExcluded;
-      }
-
-      return (
-          <Item
-              key={_item._id}
-              item={_item}
-              type={_item.type}
-              baseUrl={_item.fileurl}
-              clickHandler={this.onItemClick}
-              excluded={isExcluded}
-          />
-      );
     }
 
     webBleScanStop(e) {
         e.preventDefault();
         Noble.stopScanning();
-        // this.drawItems();
-        var item = this.drawItems(null, Math.random().toString(36) .substr(2, 8), (Math.random().toString(36) .substr(2, 4)));
-        const excluded = this.state.excluded;
-        this.state.bleList.push(item);
-        this.state.bleList.map((list) =>
-          <Item>list</Item>
-        );
-        this.setState({ excluded });
-        console.log("this : " , this);
-        console.log("this.props.popupReducer.uploads : " , this.props.popupReducer.uploads);
-        console.log("this.state.bleList : " , this.state.bleList);
+    }
+
+    drawItems(uuid, localName) {
+      return this.props.popupReducer.ble.map((item, index) => {
+          let isExcluded = this.getExcludedIndex(item) >= 0;
+          if (!this.props.options.multiSelect) {
+              isExcluded = !isExcluded;
+          }
+          return (
+              <Item
+                  key={index}
+                  item={item}
+                  type={this.props.type}
+                  baseUrl={this.props.popupReducer.baseUrl}
+                  clickHandler={this.onItemClick}
+                  excluded={isExcluded}
+              />
+          );
+      });
     }
 
     render() {
@@ -219,7 +203,7 @@ class Bluetooth extends Component {
                           this.theme.sound_type,
                       )}`}>
                       <ul className={this.theme.obj_list}>
-                          {this.state.bleList}
+                          {this.drawItems()}
                           {/* [D] 오브젝트 링크가 클릭되면 li에 on  추가 */}
                       </ul>
                   </div>
@@ -247,12 +231,15 @@ class Bluetooth extends Component {
         );
     }
 }
+const mapStateToProps = (state) => ({
+    ...state,
+});
 
 const mapDispatchToProps = (dispatch) => ({
   triggerEvent: (event, data, hidden) => dispatch(triggerEvent(event, data, hidden))
 });
 
 export default connect(
-    null,
+    mapStateToProps,
     mapDispatchToProps
 )(Bluetooth);
