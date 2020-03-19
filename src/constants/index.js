@@ -14,6 +14,7 @@ export const EMIT_TYPES = {
     makeProject: 'makeproject',
     select: 'select',
     story_load: 'story_load',
+    bluetooth: 'bluetooth'
 };
 
 const SPRITE_SIDEBAR = {
@@ -416,6 +417,9 @@ export const DEFAULT_OPTIONS = {
                 write: {
                     name: 'Workspace.textbox',
                 },
+                bluetooth: {
+                    name: 'Workspace.bluetooth',
+                }
             },
             opt: {
                 search: { query: true },

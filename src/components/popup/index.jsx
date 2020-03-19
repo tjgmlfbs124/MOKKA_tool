@@ -10,6 +10,7 @@ import Education from './Contents/Education';
 import FileUpload from './Contents/FileUpload';
 import WriteBox from './Contents/WriteBox';
 import Draw from './Contents/Draw';
+import Bluetooth from './Contents/Bluetooth';
 import Projects from './Contents/Projects';
 import { DEFAULT_OPTIONS } from '../../constants';
 import { CommonUtils } from '@utils/Common';
@@ -159,7 +160,7 @@ class Sprite extends Component {
                     />
                 ),
             },
-            
+
             story2_load: {
                 view: (
                     <Story2
@@ -197,6 +198,14 @@ class Sprite extends Component {
                         hidden={{ type: this.props.type }}
                     />
                 ),
+            },
+            bluetooth: {
+                view: <Bluetooth
+                    type={this.options.mainType}
+                    options={this.options.opt}
+                    uploads={this.props.data.uploads}
+                    isOffline={isOffline}
+                />,
             },
         };
 
