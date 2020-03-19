@@ -55,7 +55,6 @@ class FileUpload extends Component {
             isUploading: false,
             excluded: [],
         };
-
         this.onAddItemChanged = this.onAddItemChanged.bind(this);
         this.checkFIleType = this.checkFIleType.bind(this);
         this.onItemClick = this.onItemClick.bind(this);
