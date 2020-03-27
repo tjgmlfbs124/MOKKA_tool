@@ -645,6 +645,91 @@
             line-height: 40px;
             letter-spacing: -0.3px;
         }
+        // 블루투스
+        .section_cont .ble_set{
+            position: relative;
+            padding: 8px 16px;
+            background-color: #f9f9f9;
+            border: 1px solid #e2e2e2;
+            z-index: 10;
+        }
+        .section_cont .ble_set .ble_state_on{
+            display: inline-block;
+            overflow: hidden;
+            width: 110px;
+            height: 40px;
+            border: 1px solid #4f80ff;
+            background-color: #fff;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .section_cont .ble_set .ble_state_on a{
+          font-size: 14px;
+          font-weight: 600;
+          color:#4f80ff;
+          line-height: 38px;
+        }
+
+        .section_cont .ble_set .ble_state_off{
+            display: inline-block;
+            overflow: hidden;
+            width: 110px;
+            height: 40px;
+            border: 1px solid #e2e2e2;
+            background-color: #fff;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 600;
+            color:#979797;
+            line-height: 38px;
+        }
+
+        .section_cont .ble_set .ble_state_off a{
+          font-size: 14px;
+          font-weight: 600;
+          color:#979797;
+          line-height: 38px;
+        }
+
+
+        .section_cont .ble_set .ble_scan{
+            display: inline-block;
+            overflow: hidden;
+            width: 100px;
+            height: 40px;
+            margin-left: 10px;
+            border: 1px solid #e2e2e2;
+            background-color: #fff;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: right;
+        }
+
+        .section_cont .ble_set .ble_scan a{
+          font-size: 14px;
+          font-weight: 600;
+          padding-right: 10px;
+          color:#4f80ff;
+          line-height: 38px;
+        }
+
+        .section_cont .ble_set .ble_scan div{
+            overflow: hidden;
+            position: relative;
+            float:left;
+            width: 20px;
+            height: 20px;
+            margin-left: 10px;
+            margin-top: 10px;
+            background-color: #fff;
+            border-radius: 4px;
+            background: url('#{$imageDir}/btn_pop_ble_srch.png') no-repeat;
+        }
+
         // 소리 오브젝트
         .section_cont .sound_list_box {
             flex: 1;

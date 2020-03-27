@@ -8,8 +8,8 @@ var Noble = require('noble');
 
 // stateChange 바인딩
 Noble.on('stateChange', function(state){
-  console.log("state : ", state);
-})
+  console.log("stateChange : ", state);
+});
 class Item extends Component {
     constructor(props) {
         super(props);
@@ -54,6 +54,7 @@ class Bluetooth extends Component {
     constructor(props) {
         super(props);
         const _this = this;
+
         this.theme = Theme.getStyle("popup");
         this.handleSubmit = this.handleSubmit.bind(this);
         this.webBleScanStart = this.webBleScanStart.bind(this);
@@ -63,8 +64,11 @@ class Bluetooth extends Component {
 
         this.state = {
             isUploading: false,
-            excluded: []
+            excluded: [],
+            bleState : Noble._state
         };
+
+        this.setState({});
 
         Noble.on('discover', function(peripheral){
           const localName = peripheral.advertisement.localName;
@@ -78,12 +82,14 @@ class Bluetooth extends Component {
                 },
                 extension:".png",
                 filename: localName,
-                fileurl:"./src/uploads/story_img/0000Mr.moo.png",
                 id:uuid,
                 name:localName,
                 type:"user",
                 _id:uuid
               });
+              Array.from(new Set(_this.props.popupReducer.ble)); // 중복방지
+
+              // react 갱신을 위해..
               const excluded = _this.state.excluded;
               _this.setState({ excluded });
           }
@@ -126,19 +132,23 @@ class Bluetooth extends Component {
         } else {
             selected = this.state.excluded;
         }
-        this.props.triggerEvent('bluetooth', { uploads: selected }, true);
-        selected.forEach((item, i) => {
-          const _peripherals = Noble._peripherals[item.id] ;
-          if(_peripherals){
-            _peripherals.connect(function (err){
-              if(err) console.log("connect err : " , err);
-              else{
-                _peripherals.discoverSomeServicesAndCharacteristics(['ffe0'], ['ffe1'], _this.onServicesAndCharacteristicsDiscovered);
-              }
+        console.log("NoBle : " , Noble);
+        this.props.triggerEvent('bluetooth', { uploads: selected, noble : Noble }, true);
+        this.props.triggerEvent('bleSetter', { uploads: selected, noble : Noble }, true);
 
-            });
-          }
-        });
+        Noble.stopScanning();
+        // selected.forEach((item, i) => {
+        //   const _peripherals = Noble._peripherals[item.id] ;
+        //   if(_peripherals){
+        //     _peripherals.connect(function (err){
+        //       if(err) console.log("connect err : " , err);
+        //       else{
+        //         _peripherals.discoverSomeServicesAndCharacteristics(['ffe0'], ['ffe1'], _this.onServicesAndCharacteristicsDiscovered);
+        //       }
+        //
+        //     });
+        //   }
+        // });
 
     }
 
@@ -160,7 +170,9 @@ class Bluetooth extends Component {
 
     webBleScanStart(e) {
         e.preventDefault();
+        this.props.popupReducer.ble = [];
         console.log("[BLE] StartScan");
+        console.log("current ble state : " , Noble._state);
         Noble.startScanning();
     }
 
@@ -169,7 +181,7 @@ class Bluetooth extends Component {
         Noble.stopScanning();
     }
 
-    drawItems(uuid, localName) {
+    drawItems() {
       return this.props.popupReducer.ble.map((item, index) => {
           let isExcluded = this.getExcludedIndex(item) >= 0;
           if (!this.props.options.multiSelect) {
@@ -188,11 +200,56 @@ class Bluetooth extends Component {
       });
     }
 
+    drawBleState() {
+      /* react 사용법
+          return (
+              <div className={   this.bleState == "poweredOn" ? this.theme.ble_state_on : this.theme.ble_state_off}>
+                <a> 장치 연결됨 </a>
+              </div>
+          );
+      */
+      // @TODO 위의 방법으로수정할것 <a> 태그의 dynamic 방법을 모르겠음.
+      console.log("current ble state : " , this.state.bleState);
+      if(this.state.bleState === "poweredOn"){
+        return (
+            <div className={this.theme.ble_state_on}>
+              <a> 장치 연결됨 </a>
+            </div>
+        );
+      }
+      else{
+        return (
+            <div className={this.theme.ble_state_off}>
+              <a> 장치 연결안됨 </a>
+            </div>
+        );
+      }
+    }
+
+    drawScanState() {
+      return (
+          <div className={this.theme.ble_scan} onClick={this.webBleScanStart}>
+            <a>검색시작</a>
+            <div> </div>
+          </div>
+      );
+    }
+
     render() {
         return (
           <React.Fragment>
               <section className={`${this.theme.pop_content} ${this.theme.file_add_list_content}`}>
               <div className={this.theme.section_cont}>
+                  <div className={this.theme.ble_set}>
+                    {this.drawBleState()}
+
+                    {this.drawScanState()}
+
+                    <div className={this.theme.ble_scan}>
+
+                    </div>
+
+                  </div>
                   <p className={`${this.theme.caution} ${this.theme.imico_pop_caution}`}>
                       {this.getWarnMsg()}
                   </p>
@@ -211,9 +268,6 @@ class Bluetooth extends Component {
               </section>
 
               <div className={this.theme.pop_btn_box}>
-                  <a href="#NULL" className={this.theme.active} onClick={this.webBleScanStart}>
-                      {CommonUtils.getLang('Buttons.scanStart')}
-                  </a>
                   <a href="#NULL" onClick={(e) => {
                       e.preventDefault();
                       this.props.triggerEvent('close', null, true);
@@ -222,9 +276,6 @@ class Bluetooth extends Component {
                   </a>
                   <a href="#NULL" className={this.theme.active} onClick={this.onApplyItemClicked}>
                       {CommonUtils.getLang('Buttons.add')}
-                  </a>
-                  <a href="#NULL" className={this.theme.active} onClick={this.webBleScanStop}>
-                      {CommonUtils.getLang('Buttons.scanStop')}
                   </a>
               </div>
           </React.Fragment>
