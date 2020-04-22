@@ -32,7 +32,7 @@ class Item extends Component {
         return (
             <div className={this.theme.thmb}>
               <img
-                  src={thumb || CommonUtils.createStoryImageUrl(filename, baseUrl)}
+                  src={thumb || CommonUtils.createStoryImageUrl(_id, baseUrl)}
                   alt=""
                   className="main"
                 />
