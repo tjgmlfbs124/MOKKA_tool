@@ -18,7 +18,7 @@ class Item extends Component {
         if (this.props.type === 'sound') {
             return <div className={`${this.theme.thmb} ${this.theme.imico_pop_sound_thmb}`}>&nbsp;</div>;
         }
-        let { _id, filename, fileurl, pictures = [] } = this.props.item;
+        let { goal, _id, filename, fileurl, pictures = [] } = this.props.item;
         let thumb;
         if (pictures.length > 0) {
             filename = pictures[0].filename;
@@ -29,21 +29,20 @@ class Item extends Component {
             thumb = fileurl.thumb || fileurl.resized || fileurl.origin || fileurl;
         }
         const baseUrl = this.props.popupReducer.baseUrl;
-        const item = this.props.item;
         return (
             <div className={this.theme.thmb}>
               <img
-                  src={thumb || CommonUtils.createImageUrl(_id, baseUrl)}
+                  src={thumb || CommonUtils.createStoryImageUrl(filename, baseUrl)}
                   alt=""
                   className="main"
                 />
-              {this.drawLock(item)}
+              {this.drawLock(goal)}
             </div>
         );
     }
 
-    drawLock(item){
-      if(item.goal == "answer"){
+    drawLock(goal){
+      if(goal == "answer"){
         return (
           <img
               src="./renderer/resources/uploads/00/00/thumb/0000answer.png"

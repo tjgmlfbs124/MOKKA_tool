@@ -46,6 +46,13 @@ export const CommonUtils = {
         const expUrl = /^[((http(s?))\:\/\/?)|/]/i;
         return expUrl.test(url) ? url : `/${url}`;
     },
+    createStoryImageUrl: (filename, baseUrl = '') => {
+        if (!fileurl) {
+            return '';
+        }
+        return `${baseUrl}/uploads/storyObject/thumbnail/${filename}.png`;
+    },
+
     createImageUrl: (id, baseUrl = '') => {
         if (!id) {
             return '';
