@@ -30,13 +30,30 @@ class Item extends Component {
         }
         const baseUrl = this.props.popupReducer.baseUrl;
         return (
+
             <div className={this.theme.thmb}>
-                <img
-                    src={thumb || CommonUtils.createImageUrl(_id, baseUrl)}
-                    alt=""
-                />
+            {console.log("thumb || CommonUtils.createImageUrl(_id, baseUrl) : " , thumb || CommonUtils.createImageUrl(_id, baseUrl))}
+            <img
+                src={thumb || CommonUtils.createImageUrl(_id, baseUrl)}
+                alt=""
+                className="main"
+            />
+            {this.drawLock(item)}
             </div>
         );
+    }
+
+    drawLock(item){
+      if(item.goal == "answer"){
+        return (
+          <img
+              src="./renderer/resources/uploads/00/00/thumb/0000answer.png"
+              alt=""
+              className="sub"
+            />
+        )
+
+      }
     }
 
     onItemClicked(e) {

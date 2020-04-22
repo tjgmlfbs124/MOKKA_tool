@@ -29,14 +29,30 @@ class Item extends Component {
             thumb = fileurl.thumb || fileurl.resized || fileurl.origin || fileurl;
         }
         const baseUrl = this.props.popupReducer.baseUrl;
+        const item = this.props.item;
         return (
             <div className={this.theme.thmb}>
-                <img
-                    src={thumb || CommonUtils.createImageUrl(_id, baseUrl)}
-                    alt=""
+              <img
+                  src={thumb || CommonUtils.createImageUrl(_id, baseUrl)}
+                  alt=""
+                  className="main"
                 />
+              {this.drawLock(item)}
             </div>
         );
+    }
+
+    drawLock(item){
+      if(item.goal == "answer"){
+        return (
+          <img
+              src="./renderer/resources/uploads/00/00/thumb/0000answer.png"
+              alt=""
+              className="sub"
+            />
+        )
+
+      }
     }
 
     onItemClicked(e) {
