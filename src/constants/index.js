@@ -117,6 +117,38 @@ const SPRITE_SIDEBAR = {
             background_others: { name: 'Category.background_others' },
         },
     },
+    mokkaWorld: {
+        name: 'Category.mokkaWorld',
+        sub: {
+            all: { name: 'Menus.all' },
+            mokkaWorld_Chapter01: { name: 'Category.chapter01' },
+            mokkaWorld_Chapter02: { name: 'Category.chapter02' },
+            mokkaWorld_Chapter03: { name: 'Category.chapter03' },
+            mokkaWorld_Chapter04: { name: 'Category.chapter04' },
+            mokkaWorld_Chapter05: { name: 'Category.chapter05' },
+            mokkaWorld_Chapter06: { name: 'Category.chapter06' },
+            mokkaWorld_Chapter07: { name: 'Category.chapter07' },
+            mokkaWorld_Chapter08: { name: 'Category.chapter08' },
+            mokkaWorld_Chapter09: { name: 'Category.chapter09' },
+            mokkaWorld_Chapter010: { name: 'Category.chapter10' },
+        },
+    },
+    mokka2: {
+        name: 'Category.mokka2',
+        sub: {
+            all: { name: 'Menus.all' },
+            mokkaWorld_Chapter01: { name: 'Category.chapter01' },
+            mokkaWorld_Chapter02: { name: 'Category.chapter02' },
+            mokkaWorld_Chapter03: { name: 'Category.chapter03' },
+            mokkaWorld_Chapter04: { name: 'Category.chapter04' },
+            mokkaWorld_Chapter05: { name: 'Category.chapter05' },
+            mokkaWorld_Chapter06: { name: 'Category.chapter06' },
+            mokkaWorld_Chapter07: { name: 'Category.chapter07' },
+            mokkaWorld_Chapter08: { name: 'Category.chapter08' },
+            mokkaWorld_Chapter09: { name: 'Category.chapter09' },
+            mokkaWorld_Chapter010: { name: 'Category.chapter10' },
+        },
+    }
 };
 
 const STORY_SIDEBAR = {
