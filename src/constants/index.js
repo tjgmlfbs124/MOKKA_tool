@@ -210,6 +210,24 @@ const STORY_SIDEBAR = {
             STORY_08_third: {name: "Category.STORY_third"},
             STORY_08_answer: {name: "Category.STORY_answer"}
         },
+    },
+    STORY_09: {
+        name: 'Category.STORY_09',
+        sub: {
+            STORY_09_first: {name: "Category.STORY_first"},
+            STORY_09_second: {name: "Category.STORY_second"},
+            STORY_09_third: {name: "Category.STORY_third"},
+            STORY_09_answer: {name: "Category.STORY_answer"}
+        },
+    },
+    STORY_10: {
+        name: 'Category.STORY_10',
+        sub: {
+            STORY_10_first: {name: "Category.STORY_first"},
+            STORY_10_second: {name: "Category.STORY_second"},
+            STORY_10_third: {name: "Category.STORY_third"},
+            STORY_10_answer: {name: "Category.STORY_answer"}
+        },
     }
 
 };
