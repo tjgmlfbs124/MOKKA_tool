@@ -45,12 +45,11 @@ class Item extends Component {
       if(goal == "answer"){
         return (
           <img
-              src="./renderer/resources/uploads/00/00/thumb/0000answer.png"
+              src="./renderer/resources/uploads/storyObject/thumbnail/blind.png"
               alt=""
               className="sub"
             />
         )
-
       }
     }
 
